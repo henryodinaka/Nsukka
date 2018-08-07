@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+        <title>Error</title>
+    </h:head>
+    <h:body> 
+        <div id="header">            
+            <ui:include src="header.xhtml"/>
+        </div> 
+        <div id="wrapper-other"> 
+                <p>
+                    <h:outputText class="message animate" value="#{userBean.message}"/>
+                </p>
+            <div class="error-page-div">
+                <p class="form-caption" style="color: #2c3e50">!Oops</p>
+                <h:form class="" id="error-message-form">
+                    <p class="output-label">
+                        <h:outputText style="color: red;" value="#{userBean.accountInfoReport}"/>
+                    </p>
+                    <div class="error-page-btn-div">
+                        <span>
+                            <h:commandButton class="form-btn"  value="Home" action="index"/> 
+                        </span>
+
+                        <span>
+                            <button type="button" id="uName" onclick="document.getElementById('message-div').style.display = 'block'" style="width:auto;">Report</button> 
+                        </span>
+                    </div>
+                </h:form>
+            </div> 
+        </div> 
+        <div id="message-div" class="modal form-tag-div">
+
+            <h:form id="message-form" class="modal-content animate">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('message-div').style.display = 'none'" class="close" title="Close Modal">&times;</span> 
+                </div>
+
+                <div class="container">
+                    <div class="form-tag">
+                        <h:inputText value="#{messageBean.fullName}" a:placeholder="Full Name"/>
+                    </div>
+                    <div class="form-tag">
+                        <h:inputText value="#{messageBean.email}" a:placeholder="Email"/>
+                    </div>
+                    <div class="form-tag"><br/>
+                        <h:inputText value="#{messageBean.subject}" a:placeholder="Subject"/>
+                    </div>
+                    <div class="form-tag"><br/>
+                        <h:inputTextarea value="#{messageBean.body}" rows="8" cols="50" a:placeholder="Share Your Mind"/>
+                    </div>
+
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button onclick="document.getElementById('message-div').style.display = 'none'" class="cancelbtn">Cancel</button> 
+                    <h:commandButton action="#{messageBean.save()}" value="Send" class="form-btn send-btn"/>
+                </div>
+            </h:form>
+        </div>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+
+
+

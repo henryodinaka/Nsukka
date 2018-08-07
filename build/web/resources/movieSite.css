@@ -1,0 +1,512 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dff9fb;
+}
+h1 {
+    color: #759b46;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+} 
+h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 100%;
+    font-weight: bold;
+    color: #759b46;
+    padding: 0px;
+}
+h3 {
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 130%;
+    font-weight: bold;
+}
+th{
+    font-size: 24px;
+}
+.playBtn{
+    color: white;
+    font-size: 24px;
+    background-color: green;
+    border-radius: 10px;
+}
+.editBtn{
+    color: white;
+    font-size: 16px;
+    background-color: blue;
+    border-radius: 10px;
+}
+.deleteBtn{
+    color: white;
+    font-size: 16px;
+    background-color: red;
+    border-radius: 10px;
+}
+/*head section*/
+
+/*Nav bar Styling*/
+
+#caption {
+    position: relative;
+    top: 0em;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: fantasy;
+    color: #e84118;
+    background-color: #2d3436;
+}
+#header{ 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#navbar {
+    position: relative; 
+    margin: auto;
+    padding-left: 6em;
+    height: 4em;
+    background-color:  #636e72;
+}
+
+.dropbtn {
+    color: #ffffff;
+    padding-left: 1em;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    top: 1em;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.header a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+#navbar span {
+    position: relative;
+    display: inline;
+    font-size: 123.1%;
+    color: #f5f6fa; 
+    /*text-transform: uppercase;*/ 
+    padding: .5em; 
+    top: .5em;
+}
+.nv-right {
+    position: relative; 
+    left: 2em;
+}
+
+a:link {
+    text-decoration: none;
+    color: #f5f6fa;
+}/*
+a:visited {
+    text-decoration: none;
+    color: #FFF;
+}
+*/a:hover {
+    background-color: #e84118;
+    text-decoration: underline;
+    color: #FC6;
+}
+a:active {
+    text-decoration: none;
+    color: #FC6;
+}
+#header-section img {
+    margin: 0px;
+    padding: 0px;
+    background-color: #403a19;
+    vertical-align: bottom;
+}
+
+
+#head-image img{
+    height: 10em;
+
+}
+
+/*Sidebar styling*/
+
+#sidebar { 
+    position: -webkit-sticky;
+    position: sticky; 
+    padding-left:0.5em;
+    padding-top: 1em; 
+    width: 20%;
+    height: 26em;
+    float: left;
+    background-color: #273c75;
+    overflow-y: scroll;
+    top: 6em;
+    bottom: 0;
+}
+
+#sidebar-detail { 
+    position: -webkit-sticky;
+    position: sticky; 
+    margin-left:1em;
+    padding-top: 1em; 
+    width: 36%;
+    height: 26em;
+    float: left; 
+    overflow-y: scroll;
+    top: 5em;
+    bottom: 0;
+}
+#more-detail-content{
+    position: relative;
+    top: 1em;
+    width: 60%;
+    color: red;
+    background-color: wheat;
+    left: 38%;
+}
+#sidebar p {
+    font-family: "Trebuchet MS", Helvetica, Geneva, Arial, sans-serif;
+    font-size: 100%;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/*Main content Styling*/
+#wrapper-other {   
+    margin: 50px 0; 
+    width: 100%;
+    background-color: #f5f6fa;
+    margin-bottom: 5em; 
+}
+#wrapper {  
+    margin-top: 4em;
+    padding: 0px;
+    width:100%; 
+    background-color: #f5f6fa; 
+}
+#breadImage {
+    margin: 10px;
+    padding: 0px;
+    float: right;
+    height: 316px;
+    width: 438px;
+}
+#main-content { 
+    background-color: #f5f6fa;  
+    padding: 0 20px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #000; 
+    width: 100%;
+}
+
+#sidebarTop {
+    float: right;
+    width: 240px;
+    margin: 0px;
+    padding: 0px;
+}
+#leftSidePhoto {
+    margin: 10px;
+    padding: 0px;
+    float: right;
+    height: 232px;
+    width: 200px;
+}
+/*Footer styling*/
+#footer { 
+    position: -webkit-sticky;
+    /*position: sticky;*/ 
+    bottom: 0;
+    margin: 0px;
+    padding: 0.5em 0 1em 0;
+    width: 100%;
+    clear: both;
+    float: none;
+    background-color: #2f3640;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 100%;
+    color: #FFF;
+    text-align: center;
+}
+#sidebarBottom {
+    width: 240px;
+    margin: 0px;
+    padding: 0px;
+}
+.twoTreesName {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: normal;
+    color: #759b46;
+}
+.testimonialName {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-variant: normal;
+    font-size: 85%;
+}
+.form-tag-div{
+    position: relative;
+    margin:auto;
+    width: 50%; 
+    background-color: #7f8fa6;
+    border-radius: 1em;
+}
+.form-caption{
+    position: relative;
+    font-size:36px; 
+    text-align: center;
+    font-family:sans-serif; 
+    color:whitesmoke;
+    margin: auto;
+    top: .2em;
+    width: 50%;
+}
+.message {
+    background-color: #7bed9f; 
+    color: whitesmoke; 
+    font-size: 1.5em;
+    width: 100%;
+}
+.ui-outputlabel{
+    color: whitesmoke;
+    margin: 2em;
+}
+.ui-inputfield{
+    position: relative;
+    left: 7em;
+}
+.ui-selectoneradio label{
+    color: whitesmoke;
+}
+.ui-radiobutton-box,.ui-selectoneradio label{
+    position: relative;
+    left: 7em;
+}
+.form-tag input{
+    position: relative;
+    margin-bottom: 1em; 
+    width: 70%;
+    height: 2em; 
+    border-radius: .5em;
+} 
+
+.form-tag textArea{
+    position: relative;
+    margin-bottom: 1em;
+    margin-left:  15%;
+    margin-right: 25%;
+    width: 70%;
+    height: 100%; 
+    border-radius: .5em;
+}
+.form-tag .output-label {
+    margin-left: 2em;
+    padding-right: 1em;
+    color: #f5f6fa;
+    text-transform: uppercase;
+}
+.form-btn input{
+    position:relative;  
+    font-size:1.3em;   
+    border-radius: .3em;
+    height: 2em;  
+    cursor: pointer; 
+    left: 2em;
+}
+.search-form input{
+    position: relative;  
+    margin: auto;
+    width: 40%;
+    height: 2em; 
+    background-color: #d1ccc0;
+    border-radius: .5em;
+}
+.search-form-bnt input{
+    position:relative;
+    margin-left: -6em;
+    color: #e84118; 
+    border-radius: .3em;
+    height: 2em;
+    background-image: url("Images/search.png")1em 1em no-re;
+    background-color: #cccccc;
+}
+
+/*login pop up styling*/
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+/* Set a style for all buttons */
+button, .form-btn{
+    background-color: #4CAF50;
+    color: white; 
+    border: none;
+    cursor: pointer;
+    width: auto;  
+    font-size:1.3em;   
+    border-radius: .3em;
+    height: 100%;  
+}
+
+button:hover, .form-btn:hover {
+    opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.send-btn{
+    width: auto;
+    padding: 10px 18px;
+    float: right;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ 
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 2s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+.fieldErrMessage{
+    position: relative;
+    color: red;
+    left: 0%;
+}
+.error-page-div{ 
+    position: relative;
+    margin:50px auto;
+    padding: 50px 30px;
+    width: 50%; 
+    background-color: #ecf0f1;
+    border-radius: 1em; 
+}
+.error-page-btn-div{
+    position: relative; 
+    top: 2.5em;
+    width: 43%;
+    margin: auto; 
+}
+.error-page-btn-div span{ 
+    padding: .5em 2em;
+}
+.caption-index{ 
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: fantasy;
+    color: #e84118;
+}
+.out-text{
+    width: 50%;
+    height: 50%;
+    overflow-y: scroll;
+}

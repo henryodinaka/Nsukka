@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Footer file</title>
+    </h:head>
+    <h:body>
+        <div id="footer"> 
+            <h:form> 
+                <span class="nav-link" ><h:commandLink value="Home" action="index?faces-redirect=true"/></span> |
+                <span class="nav-link" ><h:commandLink value="#{userBean.loginBtn}" action="#{userBean.loginControlBtn()}"/></span> |
+                <span class="nav-link" ><h:commandLink value="Genres" action="index?faces-redirect=true"/></span> | 
+                <span class="nav-link" ><h:commandLink value="Watch" action="movie-list?faces-redirect=true"/></span> |
+                <span class="nav-link" ><h:commandLink value="Chat" action="message?faces-redirect=true"/></span>
+            </h:form> 
+
+        </div>
+    </h:body>
+</html>
+

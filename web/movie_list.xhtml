@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+
+    </h:head>
+    <h:body>
+        <ui:include src="header.xhtml"/>
+        <div id="wrapper-other"> 
+            <div id="table">
+                <h1 id="topic">Movie List</h1><br/>
+                <h:form>
+<!--                    <h:inputText value="{movieBean.movieId}" onchange="this.form.submit()" valueChangeListener="{movieBean.searchMovie()}"/><br/><br/>
+                    <h:inputText value="{movieBean.movieId}"/>-->
+<h:commandButton value="Add Movie" action="add_movie?faces-redirect=true"/>
+                </h:form>
+                <h:dataTable id="dTable" value="#{movieBean.allMovie}" var="movie" cellpadding="10" cellspacing="10" border="1">
+                    <h:column>
+                        <f:facet name = "header">Movie ID</f:facet>#{movie.movieId}
+                        <h:outputText value=""/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Title</f:facet>
+                            #{movie.movieTitle}
+                        <h:outputText value=""/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Description</f:facet>#{movie.movieDes}
+                        <h:outputText value=""/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Uploaded</f:facet>#{movie.created}
+                        <h:outputText value=""/>
+                        <!--<a href="{result.date_signed}" >Delete</a>-->
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Modified</f:facet>#{movie.updated}
+                        <h:outputText value=""/>
+                        <!--<a href="{result.date_signed}" >Delete</a>-->
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Details</f:facet>
+                        <h:form>
+                            <h:commandButton value="More" action="#{movieBean.moreDetails(movie.movieId)}" /></h:form>
+                    </h:column>
+
+                </h:dataTable>
+            </div>
+        </div>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+

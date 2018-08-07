@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Header File</title>
+
+        <script type="text/javascript" src="resources/movieScript.js"/>
+
+    </h:head>
+    <h:body>
+        <div id="header">
+
+            <div id="navbar">
+                <h:form>
+                    <span class="nav-link " title="Home"><h:commandLink action="index?faces-redirect=true"><img src="Images/movie-icon.png"/></h:commandLink></span>
+                    <span class="nav-link " ><h:commandLink class="active" value="Tv Series" action="about?faces-redirect=true"/></span>
+                    <span class="nav-link" ><h:commandLink value="Genres" action="message?faces-redirect=true"/></span>
+                    <span class="search-form nv-right"><h:inputText class="form-tag" value="#{userBean.search}" a:placeholder ="Looking for Something? "/></span>
+                    <span class="nav-link nv-right search-form-bnt"><h:commandButton action="#{userBean.search()}" value="Search"/></span>
+
+
+                    <div class="nv-right dropdown">
+                        <h:commandLink class="dropbtn" value="#{userBean.logName}"/>
+                        <div class="dropdown-content">
+                            <h:commandLink action="#{userBean.loggedUser()}" value="Profile"/>
+                            <h:commandLink action="#{userBean.loginControlBtn()}" value="#{userBean.loginBtn}"/>
+                        </div>
+                    </div>
+                    <span class="nav-link nv-right" ><h:commandLink value="#{userBean.signBtn}" action="#{userBean.regBtn()}"/></span>
+                    <span class="nav-link nv-right" ><h:commandLink value="#{userBean.loginBtn}" action="#{userBean.loginControlBtn()}"/></span> 
+                </h:form>
+            </div> 
+        </div>
+    </h:body>
+</html>
+

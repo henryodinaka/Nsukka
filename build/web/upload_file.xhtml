@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+        <title>Upload File</title>
+    </h:head>
+    <h:body>
+
+        <ui:include src="header.xhtml"/>
+        <div id="wrapper-other">
+
+            <div id="addMovie" style="position:relative; left:300px; top:10px;">
+                
+                    <p:graphicImage value="#{fileBean.dbImage}"/> 
+                <p class="form-caption">Chose a logo</p>
+
+                <h:form enctype="multipart/form-data" >
+                    <div class="form-tag">
+                        <p:growl id="message" showDetail="true" />
+
+                        <p:fileUpload value="#{fileBean.file}" mode="simple" skinSimple="true"/>
+
+                        
+                </div><br/>
+                <p class="form-bnt">
+                    <h:commandButton id="addbtn" value="Upload" action="#{fileBean.uploadFile()}"/>  
+                </p> 
+            </h:form>
+        </div>
+        <div class="movie_logo">
+            <output name="result"></output>
+        </div>
+    </div>
+    <ui:include src="footer.xhtml"/>
+</h:body>
+</html>
+

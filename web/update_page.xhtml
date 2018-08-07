@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+        <title>Update</title>
+    </h:head>
+    <h:body> 
+        <ui:include src="header.xhtml"/> 
+        <div id="wrapper-other">  
+            <p>
+                <h:outputText class="message animate" value="#{userBean.message}"/>
+            </p>
+            <div id="form-tag-div">
+                <p class="form-caption">User Update Page</p>
+                <h:form class="animate" id="regForm" onsubmit="return regFormValidation()" >
+                    <p:growl id="msgReport" sticky="false"/>
+                    <div class="form-tag"><br/>
+                        <p:outputLabel class="form-label"  value="First Name " for="fName" /> <br/> <br/>
+                        <p:inputText a:autofocus="true" id="fName" value="#{userBean.firstName}" a:placeholder="First name"  onchange="allLetterFname()"  required="true" /> 
+                    </div>
+
+                    <div class="form-tag"><br/>
+                        <p:outputLabel class="form-label"  value="Last Name " for="lName" />  <br/> <br/>
+                        <p:inputText id="lName" value="#{userBean.lastName}" a:placeholder="Last name" onchange="allLetterLname()"  required="true" /> 
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Date Of Birth " for="dob" /> <br/> <br/>
+                        <p:calendar  id="dob" value="#{userBean.dateOfBirth}" required="true"  a:placeholder="Date of birth" /> 
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label" value="Gender " for="gender" /> <br/> <br/>
+                        <p:selectOneRadio value="#{userBean.gender}" id="gender" required="true" requiredMessage="You Must select the gender">
+                            <f:selectItem itemValue="M" itemLabel="Male"/>
+                            <f:selectItem itemValue="F" itemLabel="Female"/> 
+                        </p:selectOneRadio> 
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Home Parish " for="homeParish" />  <br/> <br/>
+                        <p:inputText id="homeParish" value="#{userBean.homeParish}"  a:placeholder="Home Parish" required="true" />
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Home Address " for="homeAddress" />  <br/> <br/>
+                        <p:inputText id="homeAddress" value="#{userBean.homeAddress}"  a:placeholder="Home Address" required="true" />
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Home Town " for="homeTown" />  <br/> <br/>
+                        <p:inputText id="homeTown" value="#{userBean.homeTown}" a:placeholder="Home Town" required="true" />
+                    </div>
+
+                    <div class="form-tag"> 
+                        <p:outputLabel  class="form-label" value="Residence Parish " for="resParish" />  <br/> <br/>
+                        <p:inputText id="resParish" value="#{userBean.residenceParish}" a:placeholder ="Residence Parish" required="true" />
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Residence Address " for="resAddress" />  <br/> <br/>
+                        <p:inputText id="resAddress" value="#{userBean.residenceAddress}" required="true"  a:placeholder="Residence Address"/>
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Qualification" for="qualification" />  <br/> <br/>
+                        <p:inputText id="qualification" value="#{userBean.qualification}" required="true"  a:placeholder="Qualification"/>
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Occupation " for="occupation" />  <br/> <br/>
+                        <p:inputText id="occupation" value="#{userBean.occupation}" required="true"  a:placeholder="Occupation"/>
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Phone Number " for="phone" /> <br/> <br/>
+                        <p:inputText  onchange="allnumeric()" id="phone" value="#{userBean.phoneNumber}" a:placeholder="Phone Number"  required="true" /> 
+                    </div>
+
+                    <div class="form-tag">
+                        <p:outputLabel class="form-label"  value="Email: " for="email" /> <br/> <br/>
+                        <p:inputText id="email" value="#{userBean.email}" a:placeholder="Valid Email" onchange="ValidateEmail()" required="true" />  
+                    </div> 
+                    <p class="form-tag"><br/>
+                        <p:commandButton class="form-btn" update="msgReport" value="Update" actionListener="#{userBean.updateLoggedUser()}"/>
+                    </p>
+                    <p:commandButton class="form-btn" update="msgReport" value="Upload Picture" action="upload_file?faces-redirect=true"/>
+
+
+                </h:form>
+            </div> 
+        </div> 
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+
+
+
+
+

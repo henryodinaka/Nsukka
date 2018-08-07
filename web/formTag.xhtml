@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body> 
+        <div id="form-tag-div">
+            <p style="font-size:36px; font-family:sans-serif; color:green;">User Registration</p>
+            <h:form >
+                <div class="form-tag">
+                    <h:inputText value="#{userBean.username}" a:placeholder="Username" /> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputText value="#{userBean.firstName}" a:placeholder="First name" /> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputText  value="#{userBean.lastName}" a:placeholder="Last name"/> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputText  value="#{userBean.phone}" a:placeholder="Phone Number" /> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputText  value="#{userBean.emailId}" a:placeholder="Valid Email"/> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputSecret   value="#{userBean.password}" a:placeholder="Password"/> 
+                </div>
+                <div class="form-tag"><br/>
+                    <h:inputSecret  value="#{userBean.password2}" a:placeholder="Confirm Password"/> 
+                </div>
+                <p class="form-tag"><br/>
+                    <h:commandButton id="addbtn"  value="Register" action="#{userBean.save()}"
+                                     style="position:relative;left:250px;width:100px; font-size:18px; color:green; height:40px;"/>
+
+
+                </p>
+            </h:form>
+        </div> 
+    </h:body>
+</html>
+

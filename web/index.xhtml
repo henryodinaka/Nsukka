@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Home</title>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+
+        <script type="text/javascript" src="resources/movieScript.js"/>
+
+    </h:head>
+    <h:body> 
+        <div id="caption">
+            <marquee width = "50%">Super HD Movies</marquee><br/>
+        </div>  
+        <div id="header">
+            <ui:include src="header.xhtml"/>
+        </div> 
+        <div id="main-content">
+            
+
+            <h:form id="form-movie-series">
+                <p:dataGrid var="movie" value="#{movieService.viewMovie()}" columns="4" layout="grid"
+                            rows="8" paginator="true" id="movie-grid"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            rowsPerPageTemplate="6,12,16">
+
+                    <f:facet name="header">
+                        <p class="caption-index"> Recommended Movie</p>
+                    </f:facet>
+
+                    <p:panel header="#{movie.movieTitle}" style="text-align:center">
+                        <h:panelGrid columns="1" style="width:100%">
+                            <p:graphicImage name="Images/img_avatar2.png"/> 
+
+                            <h:outputText value="#{movie.movieDes}" />
+
+                            <h:commandButton value="More" action="#{movieBean.moreDetails(movie.movieId)}" title="View Detail">
+                            </h:commandButton>
+                        </h:panelGrid>
+                    </p:panel>
+
+                </p:dataGrid>
+            </h:form>
+            
+            <h:form id="form-tv-series">
+                <p:dataGrid var="movie" value="#{movieService.viewMovie()}" columns="4" layout="grid"
+                            rows="8" paginator="true" id="movie-grid"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            rowsPerPageTemplate="6,12,16">
+
+                    <f:facet name="header">
+                        <p class="caption-index"> Recommended tv series</p>
+                    </f:facet>
+
+                    <p:panel header="#{movie.movieTitle}" style="text-align:center">
+                        <h:panelGrid columns="1" style="width:100%">
+                            <p:graphicImage name="Images/img_avatar2.png"/> 
+
+                            <h:outputText value="#{movie.movieDes}" />
+
+                            <h:commandButton action="#{movieBean.moreDetails(movie.movieId)}" title="View Detail">
+                                <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                                <!--<f:setPropertyActionListener value="{movie}" target="{dataGridView.selectedCar}" />-->
+                            </h:commandButton>
+                        </h:panelGrid>
+                    </p:panel>
+
+                </p:dataGrid>
+            </h:form>
+        </div>
+        <div id="footer">
+
+            <ui:include src="footer.xhtml"/>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+        <title>Admin Dashboard</title>
+    </h:head>
+    <h:body>
+            <div id="header">
+            <ui:include src="header.xhtml"/>
+            </div>
+        <div id="wrapper-other"> 
+            <div id="table">
+                <h1>Welcome #{userBean.firstName}</h1> 
+                <table border="0" width="60%" align="center">
+                    <tr>
+                        <td align="center">
+                            <p align="center">
+                                <p:graphicImage value="#{fileBean.dbImage}"/>
+                            </p>
+                        </td>
+                    </tr>
+                </table><br/>
+                <table bgcolor="black" cellpadding="12px" border="1" width="60%" align="center">
+                    <tr>
+                        <td bgcolor="white">
+                            <table cellpadding="12px" bgcolor="white" border="0" align="center" style="height: 100%">
+                                <tr>
+                                    <td>
+                                        First Name
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.firstName}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Last Name
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.lastName}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Phone Number
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.phoneNumber}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Email Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.email}"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        Date of birth
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.dateOfBirth}">
+                                            <f:convertDateTime pattern="dd/MM/YYYY"/>
+                                        </h:outputText>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Gender
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.gender}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Home Parish
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.homeParish}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Home Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.homeAddress}"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Residence Parish
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.residenceParish}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Residence Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.residenceAddress}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Qualification
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.qualification}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Occupation
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.occupation}"/>
+                                    </td>
+                                </tr> 
+
+                                <tr>
+                                    <td>
+                                        Role
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.role}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Status
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.status}"/>
+                                    </td>
+                                </tr>  
+
+                                <tr> 
+                                    <td>
+                                        <h:form>
+                                            <h:commandButton value="Edit" action="update_page?faces-redirect=true"/>
+                                            <h:commandButton value="View Users" action="#{userBean.userList()}"/>
+                                            <h:commandButton value="View Movies" action="#{movieBean.movieList()}"/>
+                                            <h:commandLink value="Upload" action="upload_page?faces-redirect=true"/>
+                                        </h:form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+

@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Detail</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+    </h:head>
+    <h:body>
+        <div id="header">
+            <ui:include src="header.xhtml"/>
+        </div> 
+        <div id="wrapper-other"> 
+            <div id="sidebar-detail">
+                
+            <h:form id="form-movie-series">
+                <p:dataGrid var="user" value="#{userService.viewUser()}" columns="1" layout="grid"
+                            rows="8" paginator="false" id="user-grid"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            rowsPerPageTemplate="6,12,16">
+
+                    <f:facet name="header">
+                        <p class="caption-index"> Up Next</p>
+                    </f:facet>
+
+                    <p:panel header="#{user.username}" style="text-align:center">
+                        <h:panelGrid columns="1" style="width:100%">
+                            <p:graphicImage name="Images/img_avatar2.png"/> 
+
+                            <h:outputText value="First Name : #{user.firstName}" />
+                            <h:outputText value="Role : #{user.role}" />
+
+                            <h:commandButton value="More" action="#{userService.moreDetails(user.username)}" title="View Detail">
+                            </h:commandButton>
+                        </h:panelGrid>
+                    </p:panel>
+
+                </p:dataGrid>
+            </h:form>
+            
+            </div>
+            <div id="table" class="animate">  
+
+
+                <table border="0" width="60%" align="center">
+                    <tr>
+                        <td align="center">
+                            <p align="center">
+                                <img src="Images/img_avatar2.png" class="avatar"/>
+                            </p>
+                        </td>
+                    </tr>
+                </table><br/>
+                <table bgcolor="black" cellpadding="12px" border="1" width="60%" align="center">
+                    <tr>
+                        <td bgcolor="white">
+                            <table cellpadding="12px" bgcolor="white" border="0" align="center" style="height: 100%">
+                                <tr>
+                                    <td>
+                                        First Name
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.firstName}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Last Name
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.lastName}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Phone Number
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.phoneNumber}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Email Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.email}"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        Date of birth
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.dateOfBirth}">
+                                            <f:convertDateTime pattern="dd/MM/YYYY"/>
+                                        </h:outputText>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Gender
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.gender}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Home Parish
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.homeParish}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Home Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.homeAddress}"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Residence Parish
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.residenceParish}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Residence Address
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.residenceAddress}"/>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td>
+                                        Qualification
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.qualification}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Occupation
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.occupation}"/>
+                                    </td>
+                                </tr> 
+
+                                <tr>
+                                    <td>
+                                        Role
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.role}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Status
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <h:outputText value="#{userBean.status}"/>
+                                    </td>
+                                </tr>  
+
+                                <tr> 
+                                    <td>
+                                        <h:form>
+                                            <h:commandButton value="Delete User" action="#{userBean.delete()}"/>
+                                            <h:commandButton value="Block User" action="#{userBean.blockUser()}"/>
+                                            <h:commandButton value="Assign Role" action="#{userBean.setAdminRole()}"/>
+                                        </h:form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div> 
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+

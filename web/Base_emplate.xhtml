@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Home</title>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+
+        <h:outputScript library="js" name="movieScript.js"/>
+
+    </h:head>
+    <h:body>
+        <div id="header">
+
+            <div id="caption">
+                <marquee width = "50%">Super HD Movies</marquee>
+            </div>  
+
+
+            <div id="navbar">
+                <h:form>
+                    <span class="nav-link active" ><h:commandLink  value="Home" action="index?faces-redirect=true"/></span>
+                    <span class="nav-link" ><h:commandLink value="Tv Series" action="about?faces-redirect=true"/></span>
+                    <span class="nav-link" ><h:commandLink value="Genres" action="message?faces-redirect=true"/></span>
+                    <span class="nav-link nv-right" ><h:commandLink value="Sign Up" action="userForm?faces-redirect=true"/></span>
+                    <span class="nav-link nv-right" ><h:commandLink value="Login" action="login?faces-redirect=true"/></span>
+                </h:form>
+            </div> 
+        </div>
+        <ui:include src="sidebar.xhtml"/> 
+        <div id="wrapper-other"> 
+
+            <div id="main-content">
+                <h1> Two Trees Extra Virgin Olive Oil - In a Store Near You!</h1>
+                <p>Thank you for taking the time out of your busy day to explore the <em>Two Trees Olive Oil </em>website. We hope you'll find the information on these pages both educational and inspiring. Within these pages you'll find an interactive tour to learn about our oil-making process. In addition, you can shop for all our products right here online, or find stores that carry our delicious products. We love to get feedback about our products, website, and company in general so please feel free to leave us a message at <a href="feedback_twotreesoliveoil.html"><strong>feedback@twotreesoliveoil.com</strong></a>.
+                </p>
+                <p>Every month we provide a new challenge on the home page that gives our customers the opportunity to win our products. This month's challenge invites you to select the olive oil flavor of the month out of the three flavors indicated. If you select the correct flavor in one try, you'll receive a 24-ounce bottle of that flavor in the mail. Good luck playing the &quot;Flavor of the Month&quot; game! </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+

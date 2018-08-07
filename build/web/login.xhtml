@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="resources/movieSite.css"/>
+        <title>User Login</title>
+    </h:head>
+    <h:body> 
+        <div id="header">            
+        <ui:include src="header.xhtml"/>
+        </div> 
+        <div id="wrapper-other"> 
+            <div class="form-tag-div">
+                <p class="form-caption">Login</p>
+                <h:form class="animate" id="login-form" onsubmit="return loginValidation()">
+                    <div class="imgcontainer">
+                        <img src="Images/img_avatar2.png" alt="Avatar" class="avatar"/>
+                    </div>
+                    <p class="output-label"><h:outputText style="color: red;" value="#{userBean.message}"/></p>
+                    <div class="form-tag">
+                        <h:inputText a:autofocus="true" id="uName" value="#{userBean.username}" a:placeholder="Username" /> 
+                    </div>
+                    <div class="form-tag">
+                        <h:inputSecret id="pass"  value="#{userBean.password}" a:placeholder="Password"/> 
+                    </div>
+                    <p class="form-tag">
+                        <h:commandButton class="form-btn" value="Login" action="#{userBean.login()}"/>
+                    </p>
+                </h:form>
+            </div> 
+        </div> 
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+
+
+
